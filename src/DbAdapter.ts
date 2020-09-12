@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 
 export class DataAdapter {
     constructor(public inputPath: string) {}
@@ -26,6 +26,11 @@ export class DataAdapter {
 
             return rowToBeProcessed;
         });
+        writeFileSync(
+            this.inputPath.slice(0, -5) +
+                `_${new Date().toLocaleTimeString().split(' ').join('')}.json`,
+            JSON.stringify(data),
+        );
         return data;
     }
 }
