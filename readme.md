@@ -1,8 +1,8 @@
 ## What you can do
-So you can connect to your SQL db, get big amount of 
-data as an array by writing whatever query you need, use it as an array
+So you can connect to your SQL db, get a big amount of 
+data as an array by writing whatever query you need, use it as an array,
 or choose to save it as json. You can also process the json file
-you just created or any json array to remove or to keep any fields you
+you just created or any other json array to remove or to keep fields you
 need.
 
 ## How you can do
@@ -37,7 +37,7 @@ dbExport.getData(query)
 #
 ####**Class DbAdapter**
 
-Give the path of you json file. For exemple if you used the **DbExport** for saving your json, you can use the **outputPath** property of the same instance.
+Give the path of your json file. For exemple if you used the **DbExport** for saving your json, you can use the **outputPath** property of the same instance.
 
 `const dataAdapter = new DataAdapter(dbExport.outputPath);`
 ##
@@ -46,12 +46,12 @@ You can count your documents by using its **count** property
 `dataAdapter.count`
 ##
 
-And finaly you can process your data by choose some 
+And finally you can process your data by choose some 
 fields to keep only, or fields to be removed. And 
-then the new data will be save as new json fine in 
+then the new data will be save as new json file in 
 the same folder, and the method will return new array.
-To keep the only fields you want, pass a string of fields to the 
-**dbAdapter.process** like **'name id'** (don't forget spaces between fields).
+To keep the only fields you want. Pass a string of fields to the 
+**dbAdapter.process** method like **'name id'** (don't forget spaces between fields).
 The following example will keep only names and ids.
 ~~~
 const whatToKeep = 'name id';
